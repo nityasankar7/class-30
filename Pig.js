@@ -8,15 +8,16 @@ class Pig extends BaseClass {
   display(){
     console.log(this.body.speed)
    
-    if(this.body.speed<0.277){
+    if(this.body.speed<3){
       super.display();
 
     }
     else{
+      World.remove(world,this.body)
       push();
-      //World.remove(world,this.body)
+      
      
-      this.Visiblity=this.Visibility-50;//making it transparent
+      this.Visibility=this.Visibility-5;//making it transparent
       tint(255,this.Visibility);
       image(this.image,this.body.position.x,this.body.position.y,50,50)
       pop();
